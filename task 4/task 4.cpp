@@ -1,36 +1,41 @@
 ﻿#include <iostream>
 #include <cmath>
+using std::cin;
+using std::cout;
+using std::endl; //std каждый раз нельзя((
+
 
 int main()
 {
-    setlocale(LC_ALL, "ru");
-    int a1, a2, V1, V2, S, sumOfSpd, sumOfAcl;
+    setlocale(LC_ALL, "ru"); // после функции мейн 
+
+    int a1, a2, v1, v2, s, sumOfSpd, sumOfAcl;
     float t;
 
-    std::cout << "Введите скорость первого автомобиля: ";
-    std::cin >> V1;
-    V1 = abs(V1);
+    cout << "Введите скорость первого автомобиля: ";
+    cin >> v1;
+    v1 = abs(v1);
 
-    std::cout << "Введите скорость второго автомобиля: ";
-    std::cin >> V2;
-    V2 = abs(V2);
+    cout << "Введите скорость второго автомобиля: ";
+    cin >> v2;
+    v2 = abs(v2);
 
-    std::cout << "Введите ускорение первого автомобиля: ";
-    std::cin >> a1;
+    cout << "Введите ускорение первого автомобиля: ";
+    cin >> a1;
     a1 = abs(a1);
 
-    std::cout << "Введите ускорение второго автомобиля: ";
-    std::cin >> a2;
+    cout << "Введите ускорение второго автомобиля: ";
+    cin >> a2;
     a2 = abs(a2);
 
-    std::cout << "Введите начальное расстояние между автомобилями: ";
-    std::cin >> S;
-    S = abs(S);
+    cout << "Введите начальное расстояние между автомобилями: ";
+    cin >> s;
+    s = abs(s);
 
-    sumOfSpd = V1 + V2;
+    sumOfSpd = v1 + v2;
     sumOfAcl = a1 + a2;
-    t = abs((-sumOfSpd) + sqrt(pow(sumOfSpd, 2) + sumOfAcl * 2 * S) / sumOfAcl);
+    t = abs(-sumOfSpd + sqrt(pow(sumOfSpd, 2) + sumOfAcl * 2 * s) / sumOfAcl); //были лишние скобки
 
-    std::cout << "Время встречи автомобилей: " << t << std::endl;
+    cout << "Время встречи автомобилей: " << t << endl;
     return 0;
 }
