@@ -18,24 +18,28 @@ int main() {
     cout << "Введите первую сторону треугольника: ";
     cin >> sideA;
 
-    if (sideA <= 0) {
+    if (sideA == 0) {
         cout << "Введена неверная величина" << endl;
     }
     else {
         cout << "Введите вторую сторону треугольника: ";
         cin >> sideB;
 
-        if (sideB <= 0) {
+        if (sideB == 0) {
             cout << "Введена неверная величина" << endl;
         }
         else {
             cout << "Введите третью сторону треугольника: ";
             cin >> sideC;
 
-            if (sideC <= 0) {
+            if (sideC == 0) {
                 cout << "Введена неверная величина" << endl;
             }
             else {
+                sideA = abs(sideA);
+                sideB = abs(sideB);
+                sideC = abs(sideC);
+
                 // Проверка существования треугольника
                 if (sideB + sideC - sideA < EPS || sideB + sideA - sideC < EPS || sideA + sideC - sideB < EPS) {
                     cout << "Треугольник не существует" << endl;
